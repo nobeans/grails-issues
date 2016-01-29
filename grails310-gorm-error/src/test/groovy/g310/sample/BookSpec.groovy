@@ -29,7 +29,7 @@ class BookSpec extends Specification {
     void "individually save"() {
         given:
         def author = new Author(name: "Mike").save(flush: true, failOnError: true)
-        Author.count() == 1
+        assert Author.count() == 1
 
         and:
         def book = new Book(title: "Hello World", author: author)
@@ -45,7 +45,7 @@ class BookSpec extends Specification {
     void "individually save in another session"() {
         given:
         def author = Author.withNewTransaction { new Author(name: "Mike").save(flush: true, failOnError: true) }
-        Author.count() == 1
+        assert Author.count() == 1
 
         and:
         def book = new Book(title: "Hello World", author: author)
