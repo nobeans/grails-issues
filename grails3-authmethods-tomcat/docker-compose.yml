@@ -1,0 +1,9 @@
+app:
+  image: tomcat:8-jre8
+  ports:
+    - 8080:8080
+  volumes:
+    - .:/usr/src/app
+    - ./logs:/opt/tomcat/logs
+  entrypoint:
+    - /usr/src/app/entrypoint.sh
