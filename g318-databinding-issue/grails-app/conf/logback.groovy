@@ -4,7 +4,7 @@ import grails.util.Environment
 // See http://logback.qos.ch/manual/groovy.html for details on configuration
 appender('STDOUT', ConsoleAppender) {
     encoder(PatternLayoutEncoder) {
-        pattern = "%level %logger - %msg%n"
+        pattern = "%level %logger:%line - %msg%n"
     }
 }
 
@@ -21,3 +21,5 @@ if (Environment.isDevelopmentMode() && targetDir) {
     }
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
 }
+
+logger('g318.databinding.issue', INFO,  ['STDOUT'], false)
