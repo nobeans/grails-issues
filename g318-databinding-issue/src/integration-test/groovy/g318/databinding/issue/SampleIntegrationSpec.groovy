@@ -47,8 +47,8 @@ class SampleIntegrationSpec extends Specification {
         sample2.text == ""
         sample2.number == null
         sample2.bool == null
-        sample2.myDate instanceof Date    // THIS IS UNEXPECTED VALUE
-        sample2.myDate2 instanceof Date   // THIS IS UNEXPECTED VALUE
+        sample2.myDate == null
+        sample2.myDate2 == null
 
         when:
         dataBinder.bind(sample, [text: null, number: null, bool: null, myDate: null, myDate2: null] as SimpleMapDataBindingSource)
