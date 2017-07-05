@@ -100,8 +100,8 @@ dataSource:
     driverClassName: org.h2.Driver
     username: sa
     #password: password
-    password: PASSWORD
-    passwordEncryptionCodec: UppercaseCodec
+    #password: PASSWORD
+    #passwordEncryptionCodec: UppercaseCodec
 
 environments:
     development:
