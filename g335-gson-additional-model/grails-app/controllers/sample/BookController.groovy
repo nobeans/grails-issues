@@ -21,13 +21,13 @@ class BookController {
     }
 
     def show2(Long id) {
-        // There is only show3.gson.
+        // There is only show2.gson.
         // The all 'model' map's entry can be used in gson expectedly.
         render view: 'show2', model: [book: Book.get(id), foo: "FOO"]
     }
 
     def show3(Long id) {
-        // There are both show2.gson and show2.gsp.
+        // There are both show3.gson and show3.gsp.
         // Even when I specified 'json' format, the response was HTML.
         render view: 'show3', model: [book: Book.get(id), foo: "FOO"]
     }
