@@ -32,6 +32,26 @@ class BookController {
         render view: 'show3', model: [book: Book.get(id), foo: "FOO"]
     }
 
+    def show4(Long id) {
+        respond([view: 'show'], [book: Book.get(id), foo: "FOO"])
+    }
+
+    def show5(Long id) {
+        Map model = [book:Book.get(id), foo: "FOO"]
+        withFormat {
+            '*' { render view: 'show5', model: model } // default=JSON
+            html { render view: 'show5_', model: model }
+        }
+    }
+
+    def show6(Long id) {
+        Map model = [book:Book.get(id), foo: "FOO"]
+        withFormat {
+            '*' { render view: 'show6', model: model } // default=JSON
+            html { render view: 'show6', model: model }
+        }
+    }
+
     def create() {
         respond new Book(params)
     }

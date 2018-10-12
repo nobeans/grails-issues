@@ -1,0 +1,9 @@
+model {
+    Book book
+    String foo
+}
+
+json {
+    book g.render(book)
+    foo foo
+}
